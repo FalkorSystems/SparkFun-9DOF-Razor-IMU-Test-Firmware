@@ -161,12 +161,14 @@ void auto_raw(void)
 		printf("%d,", z_accel());
 		printf("%d,", x_gyro());
 		printf("%d,", y_gyro());
-		printf("%d,", z_gyro());
+		printf("%d", z_gyro());
 		if (ticks++ % 20 == 0) // Only once each 20 ticks, i.e. 400ms
+		  {
 			magnetometer();
-		printf("%d,", x_mag);
-		printf("%d,", y_mag);
-		printf("%d", z_mag);
+			printf(",%d,", x_mag);
+			printf("%d,", y_mag);
+			printf("%d", z_mag)
+		  };
 		printf("#\n\r");
 		delay_ms(20);
 	}
