@@ -539,7 +539,7 @@ void magnetometer_init(void)
 	i2cWaitForComplete();
 	i2cSendByte(0x01);    //mode register
 	i2cWaitForComplete();
-	i2cSendByte(0xA0);    //gain = 5
+	i2cSendByte(0x20);    //gain = 1
 	i2cWaitForComplete();
 	i2cSendStop();
 	
